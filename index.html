@@ -2,8 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Дизайн Кондратьева</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +12,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+
+        img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+            }
         :root {
             --primary: #4a6fa5;
             --white: #000000;
@@ -311,6 +316,16 @@
         }
    
 }
+        @media (viewport-fit: cover) {
+            body {
+        padding-top: env(safe-area-inset-top);
+        padding-right: env(safe-area-inset-right);
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-left: env(safe-area-inset-left);
+        background-color: #000; /* Замените на желаемый цвет */
+    }
+}
+
 
 /* Дополнительная страховка для всех мобильных */
 @media (max-aspect-ratio: 9/16) {
