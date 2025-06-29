@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Дизайн Кондратьева</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +17,17 @@
             --primary: #4a6fa5;
             --white: #000000;
             --social-card-bg: rgba(255, 255, 255, 0.9);
+            --vh: 100vh;
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --vh: calc(100vh - 100px); /* Подстройте значение, чтобы учесть высоту интерфейса браузера */
+            }
+        }
+
+        body {
+            height: var(--vh, 100vh);
         }
 
         /* Базовые стили */
@@ -143,17 +155,17 @@
 
         .avito:after {
             animation: blick 3s;
-            animation-delay: 7s;
+            animation-delay: 0s;
         }
 
         .vk:after {
             animation: blick 3s;
-            animation-delay: 14s; /* Задержка равна длительности анимации плюс время до следующего начала */
+            animation-delay: 7s; /* Задержка равна длительности анимации плюс время до следующего начала */
         }
 
         .pinterest:after {
             animation: blick 3s;
-            animation-delay: 21s; /* Задержка равна сумме длительностей предыдущих анимаций плюс время до следующего начала */
+            animation-delay: 14s; /* Задержка равна сумме длительностей предыдущих анимаций плюс время до следующего начала */
         }
 
         .social-btn:hover {
@@ -208,7 +220,7 @@
             left: 50%;
             transform: translateX(-50%);
             width: 58vmin;
-            padding: 15px;
+            padding: 100px;
 
         }
 
@@ -279,24 +291,24 @@
         top: 50vh !important;
     }
 
-@media (max-height: 600px) {
-    body {
-        background-size: contain;
-    }
-    
-    .social-card {
-        height: 30vh;
-    }
+    @media (max-height: 600px) {
+        body {
+            background-size: contain;
+        }
+        
+        .social-card {
+            height: 30vh;
+        }
 }
 
 
         @media (max-height: 667px) and (max-width: 375px) {
-    body {
-        background: 
-            linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
-            url('background.png') no-repeat center top / 100% auto;
-        min-height: 667px;
-    }
+        body {
+            background: 
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+                url('background.png') no-repeat center top / 100% auto;
+            min-height: 667px;
+        }
    
 }
 
