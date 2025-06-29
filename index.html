@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Дизайн Кондратьева</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,12 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-
-        img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-            }
         :root {
             --primary: #4a6fa5;
             --white: #000000;
@@ -25,10 +19,7 @@
             --vh: 100vh;
         }
 
-        @media (max-width: 768px) {
-            :root {
-                --vh: calc(100vh - 100px); /* Подстройте значение, чтобы учесть высоту интерфейса браузера */
-            }
+
         }
 
         body {
@@ -48,22 +39,34 @@
         /* Идеальный фон */
         body {
             background: 
-                url('background.png') no-repeat center center / cover fixed,
+                url('background.png') no-repeat center center fixed,
                 linear-gradient(to bottom, #000000, #000000);
+            background-size: cover;
+            background-attachment: fixed;
             position: fixed;
-        }
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: auto; /* Разрешаем скролл если контент не помещается */
+    }
+        
 
         .container {
             position: relative;
             width: 100%;
             height: 100%;
+            max-width: 400px;
+            max-height: auto;
+            margin: 0 auto;
         }
 
         /* Логотипы */
         .logo-container {
             position: absolute;
             left: 50%;
-            width: 10vmin;
+            top: 20vh;
+            width: 80px;
             height: auto;
             aspect-ratio: 1/1;
             transform: translateX(-50%);
@@ -75,7 +78,8 @@
         .logo-container-2 {
             position: absolute;
             left: 50%;
-            width: 130vmin;
+            top: 33vh;
+            width: 400px;
             height: auto;
             aspect-ratio: 4/1;
             transform: translateX(-50%);
@@ -85,7 +89,6 @@
         }
 
         .logo {
-            top: 20px;
             width: 100%;
             height: 100%;
             object-fit: contain;
@@ -97,9 +100,9 @@
             object-fit: contain;
         }
 
-        /* Социальные кнопки */
+        /* Социальные  сети */
         .social-card {
-            position: absolute;
+            position: relative;
             top: calc(37vh + 16vmin + 2vh);
             left: 50%;
             transform: translateX(-50%);
@@ -116,6 +119,15 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+        }
+
+        
+        .contact-item {
+            font-size: clamp(0.7rem, 2vw, 0.9rem);
+        }
+
+        .social-btn {
+            font-size: clamp(0.8rem, 2.5vw, 1rem);
         }
 
         .social-btn {
@@ -138,6 +150,35 @@
             transform: translateY(0);
             transition: all 0.2s ease;
         }
+        
+        @media (max-height: 600px) {
+            .social-btn {
+                margin: 10px 0; /* Уменьшенный margin для экранов меньше 768px */
+                min-height: 30px;
+                }
+            .logo-container{
+                width: 60px;
+                height: auto;
+            }
+            .logo-container-2{
+                width: 350px;
+                height: auto;
+                aspect-ratio: 4/1;
+            }
+        }
+
+        @media (max-height: 480px) {
+            .social-btn {
+                margin: 8px 0; /* Еще меньший margin для экранов меньше 480px */
+            }
+        }
+
+        @media (max-height: 480px) {
+            .social-btn {
+                margin: 5px 0; /* Еще меньший margin для экранов меньше 480px */
+            }
+        }
+
 
         .social-btn:after {
             content: '';
@@ -221,11 +262,16 @@
         .contacts-card {
             
             position: absolute;
-            bottom: 5vh;
             left: 50%;
             transform: translateX(-50%);
             width: 58vmin;
-            padding: 100px;
+            padding: 40px;
+            position: absolute;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: calc(75% + 20px); /* Расположить на 20px ниже .social-card */
 
         }
 
@@ -235,6 +281,9 @@
             margin-bottom: 0px;
             font-size: 0.8rem;
             color: #fdfdfd;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .contact-item i {
@@ -279,24 +328,9 @@
         color: #ffffff68; /* Ваш желаемый цвет */
 }
 
-    /* Адаптация для разных устройств */
-    @media (orientation: portrait) {
-    .logo-container {
-        width: 18vmin !important; /* Уменьшил с 30vmin */
-        height: 18vmin !important;
-        top: 20vh !important;
-    }
-}
-            
-    .logo-container-2 {
-        top: 30vh;
-    }
 
-    .social-card {
-        top: 50vh !important;
-    }
 
-    @media (max-height: 600px) {
+    @media (max-height: 10000px) {
         body {
             background-size: contain;
         }
@@ -307,33 +341,18 @@
 }
 
 
-        @media (max-height: 667px) and (max-width: 375px) {
-        body {
-            background: 
-                linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
-                url('background.png') no-repeat center top / 100% auto;
-            min-height: 667px;
-        }
-   
-}
-        @media (viewport-fit: cover) {
-            body {
-        padding-top: env(safe-area-inset-top);
-        padding-right: env(safe-area-inset-right);
-        padding-bottom: env(safe-area-inset-bottom);
-        padding-left: env(safe-area-inset-left);
-        background-color: #000; /* Замените на желаемый цвет */
-    }
-}
-
-
 /* Дополнительная страховка для всех мобильных */
-@media (max-aspect-ratio: 9/16) {
-    body {
-        background-size: 100% auto !important;
-        background-position: top center !important;
-    }
+
 }
+    /* Фиксим */
+    @media (min-width: 440px) {
+    body {
+        background-position: 80% 50%; /* Центрирует изображение на экранах шире 768px */
+    }
+} 
+
+
+
     </style>
     <script src="script.js" defer></script>
 </head>
