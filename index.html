@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дизайн Кондратьева</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4a6fa5;
+            --white: #000000;
+            --social-card-bg: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Базовые стили */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Montserrat';
+        }
+
+        /* Идеальный фон */
+        body {
+            background: 
+                url('background.png') no-repeat center center / cover fixed,
+                linear-gradient(to bottom, #000000, #000000);
+            position: fixed;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Логотипы */
+        .logo-container {
+            position: absolute;
+            left: 50%;
+            width: 10vmin;
+            height: auto;
+            aspect-ratio: 1/1;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-container-2 {
+            position: absolute;
+            left: 50%;
+            width: 130vmin;
+            height: auto;
+            aspect-ratio: 4/1;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            top: 20px;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .logo-2 {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Социальные кнопки */
+        .social-card {
+            position: absolute;
+            top: calc(37vh + 16vmin + 2vh);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 65vmin;
+            height: 25vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: transparent;
+        }
+
+        .social-buttons {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .social-btn {
+            height: 22%;
+            overflow: hidden;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            margin: 14px 0;
+            text-decoration: none;
+            color: #000000;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 
+            0 4px 0 rgba(0,0,0,0.1),    /* Основная тень */
+            0 6px 10px rgba(0,0,0,0.1);  /* Вторичная тень */
+            transform: translateY(0);
+            transition: all 0.2s ease;
+        }
+
+        .social-btn:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+            transform: rotate(135deg);
+            opacity: 0;
+        }
+
+        @keyframes blick {
+            0% { left: -100%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { left: 150%; opacity: 0; }
+        }
+
+        .avito:after {
+            animation: blick 3s;
+            animation-delay: 7s;
+        }
+
+        .vk:after {
+            animation: blick 3s;
+            animation-delay: 14s; /* Задержка равна длительности анимации плюс время до следующего начала */
+        }
+
+        .pinterest:after {
+            animation: blick 3s;
+            animation-delay: 21s; /* Задержка равна сумме длительностей предыдущих анимаций плюс время до следующего начала */
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-btn i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .vk { color: #0077FF !important; }
+        .avito { color: #000000 !important; }
+        .pinterest { color: #E60023 !important; }
+
+        /* Для ВКонтакте */
+        .social-btn.vk {
+            background: rgba(0, 119, 255, 0.9); /* Синий VK */
+            color: white !important;
+            box-shadow: 0 4px 0 rgba(0, 68, 153, 0.5);
+        }
+
+        /* Для Авито */
+        .social-btn.avito {
+            background: rgba(255, 255, 255, 0.9); /* Зеленый Авито */
+            color: rgb(0, 0, 0) !important;
+            box-shadow: 0 4px 0 rgba(255, 255, 255, 0.5);
+        }
+
+        /* Для Pinterest */
+        .social-btn.pinterest {
+            background: rgba(230, 0, 35, 0.9); /* Красный Pinterest */
+            color: white !important;
+            box-shadow: 0 4px 0 rgba(153, 0, 23, 0.5);
+        }
+
+        /* Общие hover-эффекты */
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 
+                0 6px 12px rgba(0,0,0,0.15),
+                0 3px 0 currentColor; /* Тень в цвет кнопки */
+            opacity: 0.95;
+        }
+
+        /* Блок с контактами */
+        .contacts-card {
+            
+            position: absolute;
+            bottom: 5vh;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 58vmin;
+            padding: 15px;
+
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0px;
+            font-size: 0.8rem;
+            color: #fdfdfd;
+        }
+
+        .contact-item i {
+            margin-right: 2%;
+            color: var(--primary);
+            width: 15px;
+            text-align: center;
+        }
+
+        .add-contact-btn {
+            width: 230px;
+            padding: 0px;
+            margin-top: 0px;
+            background-color: rgba(0, 0, 0, 0.001); /* Черный с прозрачностью 0.1% */
+            color: rgba(255, 255, 255, 0.865);
+            border: none;
+            border-radius: 10px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: 'Montserrat';
+        }
+
+        .add-contact-btn:hover {
+            background-color: rgba(58, 95, 133, 0.7); /* Более темный с прозрачностью 70% */
+        }
+        
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .icons {
+            display: flex;
+        }
+
+        .add-contact-btn i:first-child {
+            margin-right: -1px; /* Сдвигает значок WhatsApp к значку Telegram */
+        }
+        .status-text {
+        color: #ffffff68; /* Ваш желаемый цвет */
+}
+
+    /* Адаптация для разных устройств */
+    @media (orientation: portrait) {
+    .logo-container {
+        width: 18vmin !important; /* Уменьшил с 30vmin */
+        height: 18vmin !important;
+        top: 20vh !important;
+    }
+}
+            
+    .logo-container-2 {
+        top: 30vh;
+    }
+
+    .social-card {
+        top: 50vh !important;
+    }
+
+@media (max-height: 600px) {
+    body {
+        background-size: contain;
+    }
+    
+    .social-card {
+        height: 30vh;
+    }
+}
+
+
+        @media (max-height: 667px) and (max-width: 375px) {
+    body {
+        background: 
+            linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+            url('background.png') no-repeat center top / 100% auto;
+        min-height: 667px;
+    }
+   
+}
+
+/* Дополнительная страховка для всех мобильных */
+@media (max-aspect-ratio: 9/16) {
+    body {
+        background-size: 100% auto !important;
+        background-position: top center !important;
+    }
+}
+    </style>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Первый логотип -->
+        <div class="logo-container">
+            <img src="logo.png" alt="Логотип" class="logo" id="logo" onerror="this.style.display='none'">
+        </div>
+
+        <!-- Второй логотип -->
+        <div class="logo-container-2">
+            <img src="logo-2.png" alt="Логотип" class="logo-2" id="logo-2" onerror="this.style.display='none'">
+        </div>
+
+        <!-- Социальные кнопки -->
+        <div class="social-card">
+            <div class="social-buttons">
+                <a href="https://www.avito.ru/brands/4c66ef37ae3824fb35cad429fabe329f" class="social-btn avito" target="_blank">
+                    <img src="avito-logo.png" alt="Avito Icon" style="width: 25px; height: 20px; vertical-align: middle; margin-right: 8px;"> Avito
+                </a>
+                
+                <a href="https://vk.com/design_kondrateva" class="social-btn vk" target="_blank">
+                    <i class="fab fa-vk"></i> ВКонтакте
+                </a>
+                                    
+                <a href="https://pin.it/2ycI6FhZ2" class="social-btn pinterest" target="_blank">
+                    <i class="fab fa-pinterest"></i> Pinterest
+                </a>
+            </div>
+        </div>
+        <div class="contacts-card">
+        <div class="contact-item">
+                
+            <button class="add-contact-btn">
+                <div>
+                    <span>Кондратьев Никита</span>
+                </div>
+                <div>
+                    <i class="fab fa-whatsapp" style="color:#25D366;"></i>
+                    <i class="fab fa-telegram" style="color:#0088cc;"></i>
+                    <span>+7 (999) 205-96-81</span></div>
+                <div><span class="status-text">всегда на связи</span></div>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
