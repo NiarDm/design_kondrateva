@@ -20,8 +20,6 @@
         }
 
 
-        }
-
         body {
             height: var(--vh, 100vh);
         }
@@ -65,7 +63,7 @@
         .logo-container {
             position: absolute;
             left: 50%;
-            top: 20vh;
+            top: 17vh;
             width: 80px;
             height: auto;
             aspect-ratio: 1/1;
@@ -78,7 +76,7 @@
         .logo-container-2 {
             position: absolute;
             left: 50%;
-            top: 33vh;
+            top: 29vh;
             width: 400px;
             height: auto;
             aspect-ratio: 4/1;
@@ -103,7 +101,7 @@
         /* Социальные  сети */
         .social-card {
             position: relative;
-            top: calc(37vh + 16vmin + 2vh);
+            top: 47vh;
             left: 50%;
             transform: translateX(-50%);
             width: 65vmin;
@@ -121,13 +119,13 @@
             justify-content: space-between;
         }
 
-        
-        .contact-item {
-            font-size: clamp(0.7rem, 2vw, 0.9rem);
+        .social-btn {
+            font-size: clamp(1.0rem, 2.5vw, 1.2rem);
         }
 
-        .social-btn {
-            font-size: clamp(0.8rem, 2.5vw, 1rem);
+        
+        .contact-item {
+            font-size: clamp(0.9rem, 3vw, 1.5rem); 
         }
 
         .social-btn {
@@ -139,10 +137,10 @@
             justify-content: center;
             background: rgba(255, 255, 255, 0.9);
             border-radius: 8px;
-            margin: 14px 0;
+            margin: 12px 0;
             text-decoration: none;
             color: #000000;
-            font-weight: 500;
+            font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 
             0 4px 0 rgba(0,0,0,0.1),    /* Основная тень */
@@ -165,17 +163,23 @@
                 height: auto;
                 aspect-ratio: 4/1;
             }
-        }
-
-        @media (max-height: 480px) {
-            .social-btn {
-                margin: 8px 0; /* Еще меньший margin для экранов меньше 480px */
-            }
+            .contact-item {
+                font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+    }
         }
 
         @media (max-height: 480px) {
             .social-btn {
                 margin: 5px 0; /* Еще меньший margin для экранов меньше 480px */
+            }
+                       .logo-container{
+                width: 40px;
+                height: auto;
+            }
+            .logo-container-2{
+                width: 300px;
+                height: auto;
+                aspect-ratio: 4/1;
             }
         }
 
@@ -221,7 +225,7 @@
 
         .social-btn i {
             margin-right: 10px;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
         }
 
         .vk { color: #0077FF !important; }
@@ -237,7 +241,6 @@
 
         /* Для Авито */
         .social-btn.avito {
-            background: rgba(255, 255, 255, 0.9); /* Зеленый Авито */
             color: rgb(0, 0, 0) !important;
             box-shadow: 0 4px 0 rgba(255, 255, 255, 0.5);
         }
@@ -279,7 +282,7 @@
             display: flex;
             align-items: center;
             margin-bottom: 0px;
-            font-size: 0.8rem;
+            font-size: 1.5rem;
             color: #fdfdfd;
             white-space: nowrap;
             overflow: hidden;
@@ -296,7 +299,7 @@
         .add-contact-btn {
             width: 230px;
             padding: 0px;
-            margin-top: 0px;
+            margin: 0px;
             background-color: rgba(0, 0, 0, 0.001); /* Черный с прозрачностью 0.1% */
             color: rgba(255, 255, 255, 0.865);
             border: none;
@@ -330,13 +333,13 @@
 
 
 
-    @media (max-height: 10000px) {
+    @media (max-height: 1000px) {
         body {
             background-size: contain;
         }
         
         .social-card {
-            height: 30vh;
+            height: 14vh;
         }
 }
 
@@ -372,7 +375,7 @@
         <div class="social-card">
             <div class="social-buttons">
                 <a href="https://www.avito.ru/brands/4c66ef37ae3824fb35cad429fabe329f" class="social-btn avito" target="_blank">
-                    <img src="avito-logo.png" alt="Avito Icon" style="width: 25px; height: 20px; vertical-align: middle; margin-right: 8px;"> Avito
+                    <img src="avito-logo.png" alt="Avito Icon" style="width: 25px; height: 20px; vertical-align: middle; margin-right: 10px;"> Avito
                 </a>
                 
                 <a href="https://vk.com/design_kondrateva" class="social-btn vk" target="_blank">
