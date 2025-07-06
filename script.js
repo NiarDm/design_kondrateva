@@ -11,8 +11,8 @@ N;CHARSET=UTF-8:Кондратьев;Никита;;;
 TEL;TYPE=CELL:+79992059681
 EMAIL:nik070297@mail.ru
 URL:https://niardm.github.io/design_kondrateva/
-X-SOCIALPROFILE;TYPE=telegram:https://t.me/design_kondrateva  <-- Изменено здесь
-X-SOCIALPROFILE;TYPE=whatsapp:https://wa.me/79992059681       <-- Изменено здесь
+X-SOCIALPROFILE;TYPE=telegram:https://t.me/design_kondrateva
+X-SOCIALPROFILE;TYPE=whatsapp:https://wa.me/79992059681
 X-SOCIALPROFILE;TYPE=vk:https://m.vk.com/design_kondrateva?from=groups
 PHOTO;VALUE=URL;TYPE=PNG:contact_photo.png
 NOTE;CHARSET=UTF-8:Дизайн Кондратьева
