@@ -5,12 +5,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Создаем VCF файл (vCard)
         const contactData = [
             'BEGIN:VCARD',
-            'VERSION:3.0',
+            'VERSION:4.0',
             'FN:Кондратьев Никита',
             'TEL;TYPE=CELL:+79992059681',
             'EMAIL:nik070297@mail.ru',
+            'URL:https://niardm.github.io/design_kondrateva/',
+            'X-SOCIALPROFILE;TYPE=telegram:@design_kondrateva',
+            'X-SOCIALPROFILE;TYPE=whatsapp:+79992059681',
+            'X-SOCIALPROFILE;TYPE=vk:https://m.vk.com/design_kondrateva?from=groups',
             'PHOTO;VALUE=URL;TYPE=PNG:contact_photo.png',
-            'NOTE:Дизайнер',
+            'NOTE:Дизайн Кондратьева',
             'END:VCARD'
         ].join('\n');
         
