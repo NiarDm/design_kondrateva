@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Создаем VCF файл (vCard)
         const contactData = [
             'BEGIN:VCARD',
-            'VERSION:4.0',
+            'VERSION:3.0',
             'FN:Кондратьев Никита',
             'TEL;TYPE=CELL:+79992059681',
             'EMAIL:nik070297@mail.ru',
