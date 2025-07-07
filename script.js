@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     addContactBtn.addEventListener('click', function() {
         // Формируем содержимое vCard
         const vCardContent = `BEGIN:VCARD
-VERSION:3.0
+VERSION:2.1
 CHARSET=UTF-8
 FN;CHARSET=UTF-8:Кондратьев Никита
 N;CHARSET=UTF-8:Кондратьев;Никита;;;
